@@ -511,13 +511,13 @@ def build_ecg_fig(sig, mode="Monitor", window=6.0, title=""):
         paper_bgcolor=bg, plot_bgcolor=bg,
         margin=dict(l=40, r=20, t=30, b=40),
         xaxis=dict(
-            range=[0, window], title="Time (s)", titlefont=dict(size=10, color=tc),
+            range=[0, window], title=dict(text="Time (s)", font=dict(size=10, color=tc)),
             tickfont=dict(size=9, color=tc, family="IBM Plex Mono"),
             gridcolor="rgba(0,0,0,0)", showgrid=False, zeroline=False,
             tickmode="linear", dtick=1.0,
         ),
         yaxis=dict(
-            range=[-1.6, 1.9], title="Amplitude (mV)", titlefont=dict(size=10, color=tc),
+            range=[-1.6, 1.9], title=dict(text="Amplitude (mV)", font=dict(size=10, color=tc)),
             tickfont=dict(size=9, color=tc, family="IBM Plex Mono"),
             gridcolor="rgba(0,0,0,0)", showgrid=False, zeroline=False,
             tickmode="linear", dtick=0.5,
@@ -525,10 +525,6 @@ def build_ecg_fig(sig, mode="Monitor", window=6.0, title=""):
         height=320,
         dragmode="pan",
         font=dict(family="IBM Plex Mono"),
-        modebar=dict(
-            bgcolor="#141720", color="#555", activecolor="#00E676",
-            orientation="v",
-        ),
     )
     return fig
 
@@ -603,12 +599,10 @@ def build_anatomy_fig():
     fig.update_layout(
         paper_bgcolor="#050D05", plot_bgcolor="#050D05",
         margin=dict(l=50, r=20, t=20, b=50),
-        xaxis=dict(range=[0, 1.35], title="Time (s)",
-                   titlefont=dict(size=10, color="#555"),
+        xaxis=dict(range=[0, 1.35], title=dict(text="Time (s)", font=dict(size=10, color="#555")),
                    tickfont=dict(size=9, color="#555", family="IBM Plex Mono"),
                    showgrid=False, zeroline=False, tickmode="linear", dtick=0.2),
-        yaxis=dict(range=[-0.82, 1.62], title="Amplitude (mV)",
-                   titlefont=dict(size=10, color="#555"),
+        yaxis=dict(range=[-0.82, 1.62], title=dict(text="Amplitude (mV)", font=dict(size=10, color="#555")),
                    tickfont=dict(size=9, color="#555", family="IBM Plex Mono"),
                    showgrid=False, zeroline=False, tickmode="linear", dtick=0.5),
         height=380,
